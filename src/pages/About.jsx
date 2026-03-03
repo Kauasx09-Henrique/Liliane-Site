@@ -1,44 +1,70 @@
 import React from 'react';
-import './styles/About.css';
+import './styles/about.css';
 import profileImg from '../../public/Foto_Liliane.png';
 
 const About = () => {
     return (
-        <section className="about-wrapper" id="sobre">
-            <div className="about-content">
-                <div className="about-text-side">
-                    <span className="about-badge">Conheça Liliane Castro</span>
-                    <h2 className="about-heading">
-                        Sua parceira para um futuro <em>organizado</em> e <em>tranquilo</em>
+        <section className="about-premium" id="sobre">
+            <div className="about-container">
+                
+                <div className="about-text-content">
+                    <div className="badge-premium">
+                        <span className="badge-line"></span>
+                        Sobre a Especialista
+                    </div>
+                    
+                    <h2 className="heading-premium">
+                        Sua parceira para um futuro <em>organizado</em> e <em>seguro</em>.
                     </h2>
-                    <p className="about-description">
-                        Minha missão é descomplicar o universo do INSS para você. Com anos de dedicação exclusiva e estudo aprofundado das normas previdenciárias, eu não apenas organizo documentos; eu crio clareza e segurança para o seu planejamento previdenciário e a conquista dos seus benefícios.
+                    
+                    <blockquote className="quote-premium">
+                        "Minha missão é descomplicar o universo do INSS para você, transformando a burocracia em tranquilidade e resultados."
+                    </blockquote>
+                    
+                    <p className="description-premium">
+                        Com dedicação exclusiva e estudo aprofundado das normas previdenciárias, eu não apenas organizo documentos; eu crio clareza. Meu objetivo é garantir que você conquiste seus direitos sem estresse, através de um planejamento sólido, empático e totalmente estratégico.
                     </p>
-                    <div className="about-story-cards">
-                        <div className="story-card">
-                            <span className="card-number">01</span>
-                            <h3>Experiência Focada</h3>
-                            <p>Especialização contínua nas regras e cálculos do INSS para encontrar o melhor caminho para sua aposentadoria.</p>
+
+                    <div className="features-list">
+                        <div className="feature-item">
+                            <span className="feature-number">01</span>
+                            <div className="feature-details">
+                                <h3>Experiência Focada</h3>
+                                <p>Especialização contínua nas regras e cálculos do INSS para encontrar o melhor caminho.</p>
+                            </div>
                         </div>
-                        <div className="story-card">
-                            <span className="card-number">02</span>
-                            <h3>Abordagem Humanizada</h3>
-                            <p>Sua trajetória é única. Escuto sua história, analiso seu CNIS e planejo seu futuro com empatia e transparência.</p>
+                        
+                        <div className="feature-item">
+                            <span className="feature-number">02</span>
+                            <div className="feature-details">
+                                <h3>Abordagem Humanizada</h3>
+                                <p>Sua trajetória é única. Escuto sua história e planejo seu futuro com total empatia.</p>
+                            </div>
                         </div>
-                        <div className="story-card">
-                            <span className="card-number">03</span>
-                            <h3>Segurança Documental</h3>
-                            <p>Organização minuciosa e encaminhamento de pedidos para evitar pendências e garantir seus benefícios sem estresse.</p>
+                        
+                        <div className="feature-item">
+                            <span className="feature-number">03</span>
+                            <div className="feature-details">
+                                <h3>Segurança Documental</h3>
+                                <p>Organização minuciosa para evitar qualquer tipo de pendência no seu pedido.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="about-image-side">
-                    <div className="image-container">
-                        <img src={profileImg} alt="Liliane Castro" className="profile-image" />
+                <div className="about-visuals">
+                    <div className="image-wrapper-premium">
+                        <img src={profileImg} alt="Liliane Castro" className="img-premium" />
+                        <div className="img-decoration"></div>
+                        
+                        {/* Você pode alterar o número de anos de experiência aqui */}
+                        <div className="floating-badge">
+                            <span className="floating-number">+5</span>
+                            <span className="floating-text">Anos de<br/>Experiência</span>
+                        </div>
                     </div>
-                    <div className="image-accent-border"></div>
                 </div>
+
             </div>
         </section>
     );

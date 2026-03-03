@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/Home.css';
+import video from '../../public/videos/video_liliane.mp4';
 
 const Home = () => {
     return (
@@ -21,7 +22,14 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="hero-image-right">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1000&auto=format&fit=crop" alt="Consultoria Previdenciária" />
+                    <video 
+                        src={video} 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        className="hero-video"
+                    ></video>
                 </div>
             </section>
 

@@ -93,6 +93,7 @@
 .hero-actions {
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .btn-solid {
@@ -106,6 +107,7 @@
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-size: 1.05rem;
     letter-spacing: 1px;
+    border-radius: 4px;
 }
 
 .btn-solid:hover {
@@ -125,6 +127,7 @@
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-size: 1.05rem;
     letter-spacing: 1px;
+    border-radius: 4px;
 }
 
 .btn-outline:hover {
@@ -153,12 +156,12 @@
     }
 }
 
-.hero-image-right img {
+.hero-video {
     width: 100%;
     max-width: 460px;
     height: 600px;
     object-fit: cover;
-    border-radius: 230px 230px 0 0;
+    border-radius: 300px 300px 0 0;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
     transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -171,13 +174,13 @@
     width: 80%;
     height: 100%;
     border: 2px solid var(--color-gold);
-    border-radius: 230px 230px 0 0;
+    border-radius: 300px 300px 0 0;
     z-index: -1;
     transform: translate(20px, 20px);
     transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.hero-image-right:hover img {
+.hero-image-right:hover .hero-video {
     transform: translateY(-10px);
 }
 
@@ -307,7 +310,7 @@
 @media (max-width: 1024px) {
     .hero-modern {
         flex-direction: column;
-        padding-top: 6rem;
+        padding-top: 8rem;
         gap: 4rem;
     }
 
@@ -321,6 +324,7 @@
     .hero-heading {
         font-size: 3.5rem;
     }
+
     .hero-actions {
         justify-content: center;
     }
@@ -329,8 +333,9 @@
         display: none;
     }
 
-    .hero-image-right img {
+    .hero-video {
         height: 500px;
+        max-width: 400px;
     }
 
     .services-elegant {
@@ -368,5 +373,53 @@
 
     .service-arrow {
         align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-modern {
+        padding-top: 6rem;
+    }
+
+    .hero-heading {
+        font-size: 2.8rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-video {
+        height: 400px;
+        max-width: 320px;
+    }
+
+    .hero-image-right::after {
+        right: 5%;
+        width: 90%;
+    }
+
+    .services-header h2 {
+        font-size: 2.4rem;
+    }
+
+    .service-text h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-video {
+        height: 350px;
+        max-width: 280px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-solid, .btn-outline {
+        width: 100%;
     }
 }
