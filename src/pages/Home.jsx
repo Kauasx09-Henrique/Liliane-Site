@@ -22,12 +22,12 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="hero-image-right">
-                    <video 
-                        src={video} 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline 
+                    <video
+                        src={video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="hero-video"
                     ></video>
                 </div>

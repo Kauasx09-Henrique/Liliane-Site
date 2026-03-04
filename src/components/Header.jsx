@@ -42,11 +42,10 @@ const Header = () => {
           <a href="#contato" onClick={closeMenu}>Contato</a>
           <a href="#contato" className="header-btn-mobile" onClick={closeMenu}>Fale Comigo</a>
         </nav>
-        
+
         <a href="#contato" className="header-btn">Fale Comigo</a>
       </div>
     </header>
   );
 };
-
 export default Header;
