@@ -1,12 +1,30 @@
-.testimonials-premium {
-    background-color: #12422A;
-    padding: 8rem 5%;
+.testimonials-black {
+    background-color: #000000;
+    padding: 10rem 5%;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho sutil no fundo para o preto não ficar chapado */
+.testimonials-black::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(201, 169, 72, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .testimonials-container {
     max-width: 1300px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonials-header {
@@ -14,7 +32,7 @@
     margin-bottom: 5rem;
 }
 
-.badge-premium-light {
+.badge-gold {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
@@ -27,21 +45,21 @@
     margin-bottom: 1.5rem;
 }
 
-.badge-line-light {
+.badge-line-gold {
     display: inline-block;
     width: 40px;
     height: 2px;
     background-color: var(--color-gold);
 }
 
-.heading-light {
+.heading-white {
     font-family: var(--font-heading);
     color: var(--color-white);
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     line-height: 1.1;
 }
 
-.heading-light em {
+.heading-white em {
     color: var(--color-gold);
     font-style: italic;
     font-weight: 400;
@@ -50,67 +68,97 @@
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    gap: 2.5rem;
 }
 
-.testimonial-card {
-    background-color: rgba(255, 255, 253, 0.03);
-    border: 1px solid rgba(201, 169, 72, 0.2);
+.testimonial-card-dark {
+    /* Gradiente simulando um vidro escuro */
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.8) 0%, rgba(15, 15, 15, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 3.5rem 2.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     position: relative;
-    transition: transform 0.4s ease, background-color 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
 }
 
-.testimonial-card:hover {
+.testimonial-card-dark:hover {
     transform: translateY(-10px);
-    background-color: rgba(255, 255, 253, 0.06);
-    border-color: var(--color-gold);
+    background: linear-gradient(145deg, rgba(40, 40, 40, 0.9) 0%, rgba(20, 20, 20, 1) 100%);
+    border-color: rgba(201, 169, 72, 0.4);
+    box-shadow: 0 15px 35px rgba(201, 169, 72, 0.1);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
 }
 
 .quote-icon {
     font-family: var(--font-heading);
     font-size: 5rem;
-    color: var(--color-gold);
+    color: rgba(201, 169, 72, 0.15);
     line-height: 0;
-    margin-bottom: 2rem;
-    opacity: 0.5;
+    margin-top: 1.5rem;
 }
 
 .testimonial-text {
     font-family: var(--font-body);
-    color: #A8C2B4;
-    font-size: 1.15rem;
+    color: #CCCCCC;
+    /* Cinza claro, perfeito para leitura no preto */
+    font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 3rem;
     font-style: italic;
+    flex-grow: 1;
+}
+
+.testimonial-author {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
 }
 
 .testimonial-author h4 {
     font-family: var(--font-heading);
     color: var(--color-white);
     font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 .testimonial-author span {
     font-family: var(--font-body);
     color: var(--color-gold);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .testimonials-grid {
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .heading-light {
+    .heading-white {
         font-size: 2.8rem;
     }
 
-    .testimonials-premium {
+    .testimonials-black {
         padding: 6rem 5%;
     }
 
-    .testimonial-card {
-        padding: 2.5rem 1.5rem;
+    .testimonial-card-dark {
+        padding: 2.5rem 1.8rem;
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/testimonials.css';
+import './styles/Testimonials.css';
 
 const Testimonials = () => {
     const reviews = [
@@ -24,22 +24,25 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="testimonials-premium" id="depoimentos">
+        <section className="testimonials-black" id="depoimentos">
             <div className="testimonials-container">
                 <div className="testimonials-header">
-                    <span className="badge-premium-light">
-                        <span className="badge-line-light"></span>
+                    <span className="badge-gold">
+                        <span className="badge-line-gold"></span>
                         Casos de Sucesso
                     </span>
-                    <h2 className="heading-light">
+                    <h2 className="heading-white">
                         A tranquilidade de quem já <em>planejou o futuro</em>
                     </h2>
                 </div>
 
                 <div className="testimonials-grid">
                     {reviews.map((review) => (
-                        <div className="testimonial-card" key={review.id}>
-                            <div className="quote-icon">“</div>
+                        <div className="testimonial-card-dark" key={review.id}>
+                            <div className="card-top">
+                                <div className="stars">★★★★★</div>
+                                <div className="quote-icon">“</div>
+                            </div>
                             <p className="testimonial-text">{review.text}</p>
                             <div className="testimonial-author">
                                 <h4>{review.author}</h4>

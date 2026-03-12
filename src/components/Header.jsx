@@ -36,11 +36,11 @@ const Header = () => {
         </div>
 
         <nav className={`header-nav ${menuOpen ? 'active' : ''}`}>
-          <a href="#home" onClick={closeMenu}>Início</a>
-          <a href="#sobre" onClick={closeMenu}>Sobre Mim</a>
-          <a href="#servicos" onClick={closeMenu}>Serviços</a>
-          <a href="#contato" onClick={closeMenu}>Contato</a>
-          <a href="#contato" className="header-btn-mobile" onClick={closeMenu}>Fale Comigo</a>
+          <a href="#home" style={{ '--i': 1 }} onClick={closeMenu}>Início</a>
+          <a href="#sobre" style={{ '--i': 2 }} onClick={closeMenu}>Sobre Mim</a>
+          <a href="#servicos" style={{ '--i': 3 }} onClick={closeMenu}>Serviços</a>
+          <a href="#contato" style={{ '--i': 4 }} onClick={closeMenu}>Contato</a>
+          <a href="#contato" className="header-btn-mobile" style={{ '--i': 5 }} onClick={closeMenu}>Fale Comigo</a>
         </nav>
 
         <a href="#contato" className="header-btn">Fale Comigo</a>
@@ -48,4 +48,5 @@ const Header = () => {
     </header>
   );
 };
+
 export default Header;

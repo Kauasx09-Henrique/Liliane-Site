@@ -32,42 +32,6 @@ const Home = () => {
                     ></video>
                 </div>
             </section>
-
-            <section className="services-elegant">
-                <div className="services-header">
-                    <h2>Soluções sob medida para o seu momento</h2>
-                    <div className="divider"></div>
-                </div>
-
-                <div className="services-list">
-                    <div className="service-item">
-                        <div className="service-number">01</div>
-                        <div className="service-text">
-                            <h3>Planejamento Previdenciário</h3>
-                            <p>Análise completa do seu tempo de contribuição para encontrar o momento exato e o melhor valor para o seu benefício.</p>
-                        </div>
-                        <button className="service-arrow">→</button>
-                    </div>
-
-                    <div className="service-item">
-                        <div className="service-number">02</div>
-                        <div className="service-text">
-                            <h3>Análise de Extrato CNIS</h3>
-                            <p>Revisão minuciosa de todo o seu histórico para evitar pendências, surpresas ou cálculos incorretos no sistema.</p>
-                        </div>
-                        <button className="service-arrow">→</button>
-                    </div>
-
-                    <div className="service-item">
-                        <div className="service-number">03</div>
-                        <div className="service-text">
-                            <h3>Encaminhamento de Aposentadoria</h3>
-                            <p>Organização documental e acompanhamento de ponta a ponta do seu pedido diretamente nos canais oficiais.</p>
-                        </div>
-                        <button className="service-arrow">→</button>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

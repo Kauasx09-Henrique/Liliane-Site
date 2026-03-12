@@ -1,80 +1,72 @@
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Importação das fontes premium */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Paleta de Cores e Fontes Globais */
+:root {
+  --color-gold: #C9A948;
+  --color-white: #FFFFFD;
+  --color-dark-gray: #121212;
+  --color-green: #12422A;
+  --font-heading: 'PT Serif', serif;
+  --font-body: 'Montserrat', sans-serif;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 5%;
-  background-color: var(--color-white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+/* Reset Global - Tira as margens feias padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  color: var(--color-green);
-  font-size: 1.8rem;
+html {
+  font-size: 100%;
+  /* Ativa o deslize suave quando clica nos links do menu */
+  scroll-behavior: smooth;
 }
 
-.logo span {
-  color: var(--color-gold);
-}
-
-nav a {
-  margin-left: 2rem;
-  text-decoration: none;
-  color: var(--color-dark-gray);
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--color-green);
-}
-
-.hero {
-  background-color: var(--color-dark-gray);
-  color: var(--color-white);
-  padding: 8rem 5%;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero h2 {
-  color: var(--color-gold);
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  max-width: 800px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-  line-height: 1.6;
-  color: var(--color-white);
-}
-
-.cta-button {
-  background-color: var(--color-green);
-  color: var(--color-white);
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
+body {
   font-family: var(--font-body);
-  transition: transform 0.2s, background-color 0.3s;
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+  /* Impede o site de rolar para os lados no celular */
 }
 
-.cta-button:hover {
-  background-color: #1a593a;
-  transform: translateY(-2px);
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsividade Global: Diminui tudo proporcionalmente em telas menores */
+@media (max-width: 1024px) {
+  html {
+    font-size: 93.75%;
+    /* Reduz a base para 15px */
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+    /* Reduz a base para 14px */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 81.25%;
+    /* Reduz a base para 13px */
+  }
 }

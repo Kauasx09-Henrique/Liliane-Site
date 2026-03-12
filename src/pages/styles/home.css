@@ -40,6 +40,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -150,6 +151,7 @@
         opacity: 0;
         transform: translateX(40px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -413,13 +415,14 @@
         height: 350px;
         max-width: 280px;
     }
-    
+
     .hero-actions {
         flex-direction: column;
         width: 100%;
     }
 
-    .btn-solid, .btn-outline {
+    .btn-solid,
+    .btn-outline {
         width: 100%;
     }
 }
