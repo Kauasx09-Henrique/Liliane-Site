@@ -70,3 +70,19 @@ video {
     /* Reduz a base para 13px */
   }
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  /* Crucial para evitar barras de rolagem laterais em animações */
+  background-color: var(--color-white);
+
+  /* Ou var(--color-green) se quiser o site todo escuro */
+  main {
+    flex: 1;
+    /* Faz o conteúdo principal empurrar o footer para o final da tela */
+  }
+}

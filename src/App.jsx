@@ -8,6 +8,8 @@ import Faq from './pages/Faq';
 import Footer from './components/Footer';
 import Reveal from './components/Reveal';
 import Contact from './pages/Contact';
+import Services from './pages/Services';
+import Testemunhos from './pages/Testimanials';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <Reveal animation="blur-in" delay={0}>
           <Home />
         </Reveal>
-
+        <Reveal animation="fade-up" delay={100}>
+          <Services />
+        </Reveal>
         <Reveal animation="fade-up" delay={100}>
           <About />
         </Reveal>
@@ -27,13 +31,14 @@ function App() {
           <Faq />
         </Reveal>
         <Reveal animation="fade-up" delay={100}>
+          <Testemunhos />
+        </Reveal>
+        <Reveal animation="fade-up" delay={100}>
           <Contact />
         </Reveal>
       </main>
 
-      <Reveal animation="fade-up" delay={0}>
-        <Footer />
-      </Reveal>
+      <Footer />
     </div >
   );
 }

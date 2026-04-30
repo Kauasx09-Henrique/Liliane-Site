@@ -1,13 +1,13 @@
-
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './styles/faq.css';
 
 const Faq = () => {
     const [activeIndex, setActiveIndex] = useState(null);
+    const containerRef = useRef(null);
 
     const questions = [
         {
-            question: "Qual é o melhor momento para procurar um planejamento previdenciário?",
+            question: "Qual é o melhor momento para procurar um planejamento?",
             answer: "O ideal é buscar o planejamento pelo menos 5 anos antes da data provável da sua aposentadoria. No entanto, mesmo que você já tenha atingido a idade ou o tempo, uma análise antes de fazer o pedido ao INSS pode evitar perdas financeiras irreparáveis."
         },
         {
@@ -20,50 +20,68 @@ const Faq = () => {
         },
         {
             question: "A consultoria garante a aprovação do meu benefício?",
-            answer: "A consultoria garante que o seu pedido será feito da maneira mais estratégica e correta possível, com toda a documentação alinhada às exigências da lei. O deferimento (aprovação) depende da análise final do próprio INSS, mas nosso trabalho reduz drasticamente as chances de erros e negativas injustas."
+            answer: "A consultoria garante que o seu pedido será feito da maneira mais estratégica e correta possível, com toda a documentação alinhada às exigências da lei. O deferimento depende da análise final do INSS, mas nosso trabalho reduz drasticamente as chances de erros."
         }
     ];
 
     const toggleAccordion = (index) => {
-        if (activeIndex === index) {
-            setActiveIndex(null);
-        } else {
-            setActiveIndex(index);
-        }
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+        containerRef.current.style.setProperty('--mouse-y', `${y}px`);
     };
 
     return (
-        <section className="faq-premium" id="faq">
-            <div className="faq-container">
-                <div className="faq-title-side">
-                    <span className="badge-premium">
-                        <span className="badge-line"></span>
-                        Dúvidas Comuns
-                    </span>
-                    <h2 className="heading-premium">
-                        Perguntas <em>Frequentes</em>
+        <section className="faq-kinetic-section" id="faq" ref={containerRef} onMouseMove={handleMouseMove}>
+            <div className="faq-kinetic-glow"></div>
+
+            <div className="faq-kinetic-container">
+                <div className="faq-k-header">
+                    <div className="k-badge-wrapper">
+                        <span className="k-badge-dot"></span>
+                        <span className="k-badge-text">Clareza Absoluta</span>
+                    </div>
+                    <h2 className="faq-k-title">
+                        Sua jornada, <em>explicada.</em>
                     </h2>
-                    <p className="faq-description">
-                        Transparência é a base do meu trabalho. Confira as respostas para as dúvidas mais comuns sobre planejamento e benefícios do INSS.
-                    </p>
                 </div>
 
-                <div className="faq-accordion-side">
-                    {questions.map((item, index) => (
-                        <div
-                            className={`accordion-item ${activeIndex === index ? 'active' : ''}`}
-                            key={index}
-                            onClick={() => toggleAccordion(index)}
-                        >
-                            <div className="accordion-header">
-                                <h3>{item.question}</h3>
-                                <span className="accordion-icon">{activeIndex === index ? '−' : '+'}</span>
+                <div className="faq-k-grid">
+                    {questions.map((item, index) => {
+                        const isActive = activeIndex === index;
+                        return (
+                            <div
+                                key={index}
+                                className={`faq-k-card ${isActive ? 'is-active' : ''}`}
+                                onClick={() => toggleAccordion(index)}
+                            >
+                                <div className="faq-k-card-spotlight"></div>
+
+                                <div className="faq-k-card-content">
+                                    <div className="faq-k-question-area">
+                                        <div className="faq-k-number">{(index + 1).toString().padStart(2, '0')}</div>
+                                        <h3 className="faq-k-question">{item.question}</h3>
+                                        <div className="faq-k-toggle">
+                                            <span className="k-line-h"></span>
+                                            <span className="k-line-v"></span>
+                                        </div>
+                                    </div>
+
+                                    <div className="faq-k-answer-area">
+                                        <div className="faq-k-answer-inner">
+                                            <p>{item.answer}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="accordion-body">
-                                <p>{item.answer}</p>
-                            </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

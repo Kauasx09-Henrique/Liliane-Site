@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Header Desktop - Premium & Clean
+   ========================================================================== */
+
+.header-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9000;
+    padding: 2rem 5%;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-desktop.scrolled {
+    padding: 1.2rem 5%;
+}
+
+.header-d-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+    border-radius: 100px;
+    padding: 0;
+    background: transparent;
+}
+
+/* Efeito Glassmorphism quando scrollar no Desktop */
+.header-desktop.scrolled .header-d-container {
+    background: rgba(255, 255, 253, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 10px 40px rgba(18, 66, 42, 0.05);
+    border: 1px solid rgba(18, 66, 42, 0.05);
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover img {
+    transform: scale(1.05);
+}
+
+.header-d-nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.header-d-nav a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-green);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.header-d-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-d-nav a:hover,
+.header-d-nav a.active {
+    color: var(--color-gold);
+}
+
+.header-d-nav a:hover::after,
+.header-d-nav a.active::after {
+    width: 100%;
+}
+
+.btn-header-gold {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: var(--color-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+}
+
+.btn-header-gold:hover {
+    background-color: var(--color-gold);
+    color: var(--color-green);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(201, 169, 72, 0.3);
+}
+
+/* ==========================================================================
+   LIQUID DOCK MOBILE (Bottom TabBar estilo iOS)
+   ========================================================================== */
+
+/* Esconde no Desktop por padrão */
+.liquid-dock-wrapper {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+
+    /* Esconde o Header inteiro no Mobile */
+    .header-desktop {
+        display: none;
+    }
+
+    /* Exibe o Liquid Dock no Mobile */
+    .liquid-dock-wrapper {
+        display: block;
+        position: fixed;
+        bottom: 25px;
+        /* Fica flutuando perto da base */
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        pointer-events: none;
+        /* Permite clicar através da div externa */
+    }
+
+    .liquid-dock {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border-radius: 30px;
+        /* Formato de pílula */
+        pointer-events: all;
+        /* Ativa clique apenas na dock */
+        box-shadow: 0 15px 40px rgba(18, 66, 42, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        overflow: hidden;
+    }
+
+    /* O Efeito Liquid Glass Puro */
+    .liquid-blur-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 253, 0.65);
+        /* Fundo branco translúcido */
+        backdrop-filter: blur(25px) saturate(200%);
+        /* Desfoque intenso e cores vivas */
+        -webkit-backdrop-filter: blur(25px) saturate(200%);
+        /* Para iOS/Safari */
+        z-index: -1;
+    }
+
+    .dock-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        text-decoration: none;
+        color: rgba(18, 66, 42, 0.5);
+        /* Verde suave inativo */
+        transition: color 0.3s ease;
+        z-index: 1;
+        -webkit-tap-highlight-color: transparent;
+        /* Remove piscar azul no clique no celular */
+    }
+
+    .dock-item.active {
+        color: var(--color-green);
+        /* Verde forte ativo */
+    }
+
+    /* A Bolha que desliza por trás do item ativo (Framer Motion) */
+    .active-bubble {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-gold);
+        opacity: 0.15;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    .dock-icon-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dock-item.active .dock-icon-wrapper {
+        transform: translateY(-8px);
+        /* Sobe o ícone quando ativo */
+        color: var(--color-green);
+    }
+
+    .dock-label {
+        position: absolute;
+        bottom: 6px;
+        font-family: var(--font-body);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--color-green);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .liquid-dock {
+        padding: 6px 10px;
+    }
+
+    .dock-item {
+        width: 55px;
+        height: 55px;
+    }
+}
