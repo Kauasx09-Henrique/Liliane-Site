@@ -1,7 +1,5 @@
-/* Importação das fontes premium */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Paleta de Cores e Fontes Globais */
 :root {
   --color-gold: #C9A948;
   --color-white: #FFFFFD;
@@ -11,7 +9,6 @@
   --font-body: 'Montserrat', sans-serif;
 }
 
-/* Reset Global - Tira as margens feias padrão do navegador */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +17,6 @@
 
 html {
   font-size: 100%;
-  /* Ativa o deslize suave quando clica nos links do menu */
   scroll-behavior: smooth;
 }
 
@@ -32,7 +28,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   overflow-x: hidden;
-  /* Impede o site de rolar para os lados no celular */
 }
 
 .app-container {
@@ -49,25 +44,21 @@ video {
   height: auto;
 }
 
-/* Responsividade Global: Diminui tudo proporcionalmente em telas menores */
 @media (max-width: 1024px) {
   html {
     font-size: 93.75%;
-    /* Reduz a base para 15px */
   }
 }
 
 @media (max-width: 768px) {
   html {
     font-size: 87.5%;
-    /* Reduz a base para 14px */
   }
 }
 
 @media (max-width: 480px) {
   html {
     font-size: 81.25%;
-    /* Reduz a base para 13px */
   }
 }
 
@@ -77,12 +68,9 @@ video {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  /* Crucial para evitar barras de rolagem laterais em animações */
   background-color: var(--color-white);
 
-  /* Ou var(--color-green) se quiser o site todo escuro */
   main {
     flex: 1;
-    /* Faz o conteúdo principal empurrar o footer para o final da tela */
   }
 }
