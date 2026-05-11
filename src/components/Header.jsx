@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, User, Briefcase, HelpCircle, MessageCircle } from 'lucide-react';
-import './styles/Header.css';
+import './styles/header.css';
 import logoImg from '../../public/logo/logo.lc.png';
 
 const Header = () => {
