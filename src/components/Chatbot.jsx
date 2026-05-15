@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './styles/Chatbot.css';
+import './styles/chatbot.css';
 
 const Chatbot = () => {
     const messagesEndRef = useRef(null);
