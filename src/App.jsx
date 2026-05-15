@@ -10,6 +10,7 @@ import Reveal from './components/Reveal';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Testemunhos from './pages/Testimanials';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -26,7 +27,6 @@ function App() {
         <Reveal animation="fade-up" delay={100}>
           <About />
         </Reveal>
-
         <Reveal animation="fade-up" delay={100}>
           <Faq />
         </Reveal>
@@ -38,8 +38,12 @@ function App() {
         </Reveal>
       </main>
 
-      <Footer />
-    </div >
+      <Reveal animation="fade-up" delay={0}>
+        <Footer />
+      </Reveal>
+
+      <Chatbot />
+    </div>
   );
 }
 
